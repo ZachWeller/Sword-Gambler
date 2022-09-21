@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/player_run2.png" type="Texture" id=1]
 [ext_resource path="res://PlayerMovement.gd" type="Script" id=2]
-[ext_resource path="res://assets/downLeftSword.png" type="Texture" id=3]
+[ext_resource path="res://pixil-frame-0 (12).png" type="Texture" id=3]
 [ext_resource path="res://assets/player_run1.png" type="Texture" id=4]
-[ext_resource path="res://assets/upLeftSword.png" type="Texture" id=5]
+[ext_resource path="res://pixil-frame-0 (13).png" type="Texture" id=5]
 [ext_resource path="res://assets/pixil-frame-0.png" type="Texture" id=6]
 
 [sub_resource type="TileSet" id=1]
@@ -23,14 +23,6 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="SpriteFrames" id=15]
-animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "right attack",
-"speed": 5.0
-} ]
-
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 1 ) ],
@@ -39,26 +31,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="StreamTexture" id=13]
-load_path = "res://.import/upLeftSword.png-e02a0b869cebb81da055936e074ae61c.stex"
-
-[sub_resource type="StreamTexture" id=10]
-flags = 4
-load_path = "res://.import/downLeftSword.png-2db957cb366501eb80281f9f9358fe37.stex"
-
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 13 ), SubResource( 10 ), null ],
+"frames": [ ExtResource( 5 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "idlesword",
-"speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=14]
-animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "idlesword",
+"name": "swordSwing",
 "speed": 5.0
 } ]
 
@@ -66,26 +43,11 @@ animations = [ {
 radius = 14.0
 height = 18.0
 
-[sub_resource type="Animation" id=12]
-resource_name = "attack"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frames")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( -0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 15 ) ]
-}
-
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 262152, -1073741824, 0, 262153, -1073741824, 0, 262154, -1073741824, 0, 327688, -1073741824, 0, 327689, -1073741824, 0, 327690, -1073741824, 0, 327691, -1073741824, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0 )
+tile_data = PoolIntArray( 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 851981, 0, 0, 851982, 0, 0, 851983, 0, 0, 851984, 0, 0, 851985, 0, 0, 851986, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 851991, 0, 0, 851992, 0, 0, 851993, 0, 0, 851994, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0 )
 
 [node name="Main Character" type="KinematicBody2D" parent="."]
 position = Vector2( 608, 354 )
@@ -97,27 +59,15 @@ __meta__ = {
 [node name="Position2D" type="Position2D" parent="Main Character"]
 position = Vector2( 2, 0 )
 
-[node name="rightSwordSprite" type="AnimatedSprite" parent="Main Character/Position2D"]
-position = Vector2( -11, 7 )
-scale = Vector2( 1.4375, 1.4375 )
-frames = SubResource( 15 )
-animation = "right attack"
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Main Character/Position2D"]
+[node name="Player" type="AnimatedSprite" parent="Main Character/Position2D"]
 scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "walk"
 
-[node name="leftSwordSprite" type="AnimatedSprite" parent="Main Character/Position2D"]
-visible = false
-position = Vector2( -26, -2 )
-frames = SubResource( 11 )
-animation = "idlesword"
-
-[node name="idleSword" type="AnimatedSprite" parent="Main Character/Position2D"]
-visible = false
-frames = SubResource( 14 )
-animation = "idlesword"
+[node name="Sword" type="AnimatedSprite" parent="Main Character/Position2D"]
+position = Vector2( -12, 6 )
+frames = SubResource( 9 )
+animation = "swordSwing"
 
 [node name="Camera2D" type="Camera2D" parent="Main Character"]
 scale = Vector2( 0.25, 0.25 )
@@ -126,7 +76,3 @@ zoom = Vector2( 0.5, 0.5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Main Character"]
 shape = SubResource( 8 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Main Character"]
-root_node = NodePath("../Position2D/rightSwordSprite")
-anims/attack = SubResource( 12 )
