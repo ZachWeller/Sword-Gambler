@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Gorilla.png" type="Texture" id=1]
+[ext_resource path="res://assets/RpgCharacterShadow.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Gorilla Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Monkey:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 11.0
+height = 14.0
+
+[node name="Gorilla Character" type="KinematicBody2D"]
+position = Vector2( 2, 6 )
+
+[node name="Monkey" type="Sprite" parent="."]
+position = Vector2( -7, -39 )
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="Shadow" type="Sprite" parent="Monkey"]
+position = Vector2( 1, -1 )
+scale = Vector2( 2.42188, 1.29688 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Gorilla Idle" = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 1, 1 )
+shape = SubResource( 2 )

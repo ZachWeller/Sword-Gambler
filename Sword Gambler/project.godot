@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="SwordGambler"
-run/main_scene="res://SwordGambler.tscn"
+run/main_scene="res://Gorilla.tscn"
 
 [display]
 
