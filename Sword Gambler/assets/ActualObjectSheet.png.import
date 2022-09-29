@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RpgCharacterShadow.png-a4d24e0fc3ac228c76196c4685fbabb3.stex"
+path="res://.import/ActualObjectSheet.png-459f405dda44a52cdc7b12386c05ffb0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/RpgCharacterShadow.png"
-dest_files=[ "res://.import/RpgCharacterShadow.png-a4d24e0fc3ac228c76196c4685fbabb3.stex" ]
+source_file="res://assets/ActualObjectSheet.png"
+dest_files=[ "res://.import/ActualObjectSheet.png-459f405dda44a52cdc7b12386c05ffb0.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
