@@ -1,11 +1,14 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/Warrior.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
-[ext_resource path="res://assets/SwordAsset.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=14]
-resource_name = "Front_Sword_Idle "
+[sub_resource type="CapsuleShape2D" id=19]
+radius = 4.0
+height = 2.0
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle_Down"
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -16,34 +19,6 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Sword:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 21.112, 1 ),
-"update": 0,
-"values": [ Vector2( 10, -6 ), Vector2( 10, -6 ), Vector2( 10, -6 ), Vector2( 10, -5 ), Vector2( 10, -6 ) ]
-}
-
-[sub_resource type="Animation" id=1]
-resource_name = "Idle_Down"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3 ]
@@ -97,9 +72,94 @@ tracks/0/keys = {
 "values": [ 32, 33, 34, 35, 32 ]
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "Sword_Back_Walk"
-length = 0.4
+[sub_resource type="Animation" id=14]
+resource_name = "Sword_Idle_Down"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 64, 65, 66, 67 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Sword_Idle_Left"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 76, 77, 78, 79 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Sword_Idle_Right"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 68, 69, 70, 71 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "Sword_Idle_Up"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 72, 73, 74, 75 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Sword_Swing_Down"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "Sword_Swing_Right"
+length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -111,11 +171,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 40, 41, 42, 43 ]
+"values": [ 28, 29, 30, 31 ]
 }
 
 [sub_resource type="Animation" id=10]
-resource_name = "Sword_Front_Walk"
+resource_name = "Sword_Walk_Down"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -132,7 +192,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=11]
-resource_name = "Sword_Left_Walk "
+resource_name = "Sword_Walk_Left"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -149,7 +209,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=12]
-resource_name = "Sword_Right_Walk"
+resource_name = "Sword_Walk_Right"
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -165,8 +225,10 @@ tracks/0/keys = {
 "values": [ 24, 25, 26, 27 ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "Toggle_Sword"
+[sub_resource type="Animation" id=13]
+resource_name = "Sword_Walk_Up"
+length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -174,10 +236,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 8 ]
+"values": [ 40, 41, 42, 43 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -200,6 +262,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "Walk_Left"
 length = 0.4
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -247,42 +310,112 @@ tracks/0/keys = {
 "values": [ 36, 37, 38, 39 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "Idle_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=27]
+animation = "Idle_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Idle_Right"
+
+[sub_resource type="AnimationNodeAnimation" id=29]
+animation = "Idle_Up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=30]
+blend_point_0/node = SubResource( 26 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 27 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 28 )
+blend_point_2/pos = Vector2( 1, 0 )
+blend_point_3/node = SubResource( 29 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id=31]
+animation = "Walk_Left"
+
+[sub_resource type="AnimationNodeAnimation" id=32]
+animation = "Walk_Down"
+
+[sub_resource type="AnimationNodeAnimation" id=33]
+animation = "Walk_Up"
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "Walk_Right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=35]
+blend_point_0/node = SubResource( 31 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 32 )
+blend_point_1/pos = Vector2( 0, 1.1 )
+blend_point_2/node = SubResource( 33 )
+blend_point_2/pos = Vector2( 0, -1.1 )
+blend_point_3/node = SubResource( 34 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/Idle/node = SubResource( 30 )
+states/Idle/position = Vector2( 158, -3.472 )
+states/Walk/node = SubResource( 35 )
+states/Walk/position = Vector2( 353, -3.472 )
+transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -276, -134.472 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+
 [node name="MainCharacter" type="KinematicBody2D"]
 collision/safe_margin = 2.0
 script = ExtResource( 2 )
-speed = 400
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -3 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 5
-frame = 50
+frame = 51
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1 )
+rotation = -1.5708
+shape = SubResource( 19 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-"anims/Front_Sword_Idle " = SubResource( 14 )
 anims/Idle_Down = SubResource( 1 )
 anims/Idle_Left = SubResource( 6 )
 anims/Idle_Right = SubResource( 7 )
 anims/Idle_Up = SubResource( 8 )
-anims/Sword_Back_Walk = SubResource( 13 )
-anims/Sword_Front_Walk = SubResource( 10 )
-"anims/Sword_Left_Walk " = SubResource( 11 )
-anims/Sword_Right_Walk = SubResource( 12 )
-anims/Toggle_Sword = SubResource( 9 )
+anims/Sword_Idle_Down = SubResource( 14 )
+anims/Sword_Idle_Left = SubResource( 15 )
+anims/Sword_Idle_Right = SubResource( 16 )
+anims/Sword_Idle_Up = SubResource( 17 )
+anims/Sword_Swing_Down = SubResource( 9 )
+anims/Sword_Swing_Right = SubResource( 18 )
+anims/Sword_Walk_Down = SubResource( 10 )
+anims/Sword_Walk_Left = SubResource( 11 )
+anims/Sword_Walk_Right = SubResource( 12 )
+anims/Sword_Walk_Up = SubResource( 13 )
 anims/Walk_Down = SubResource( 5 )
 anims/Walk_Left = SubResource( 2 )
 anims/Walk_Right = SubResource( 3 )
 anims/Walk_Up = SubResource( 4 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-process_priority = 1
-visible = false
-build_mode = 1
-polygon = PoolVector2Array( 4, -11, 4, -10, 5, -10, 5, -5, 6, -5, 6, -4, 7, -4, 7, -1, 8, -1, 8, 3, 7, 3, 7, 4, 5, 4, 5, 3, 4, 3, 4, 5, -4, 5, -4, 3, -5, 3, -5, 4, -7, 4, -7, 3, -8, 3, -8, -1, -7, -1, -7, -4, -6, -4, -6, -5, -5, -5, -5, -10, -4, -10, -4, -11, -3, -11, -3, -12, 3, -12, 3, -11 )
-
-[node name="Sword" type="Sprite" parent="."]
-visible = false
-position = Vector2( 10, -6 )
-texture = ExtResource( 3 )
-hframes = 4
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 24 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 25 )
+parameters/Idle/blend_position = Vector2( -0.00835657, 0.000449419 )
+parameters/Walk/blend_position = Vector2( 0, 0 )
