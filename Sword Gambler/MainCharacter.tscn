@@ -1,11 +1,280 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/Warrior.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://assets/SwordAsset.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=19]
 radius = 4.0
 height = 2.0
+
+[sub_resource type="Animation" id=9]
+resource_name = "AttackDown"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 67, 67, 67 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 3, 3, 4, 1, 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( 6, 6 ), Vector2( 6, 7 ), Vector2( -2, 9 ), Vector2( -1, 2 ), Vector2( -1, 2 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sword:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "AttackLeft"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 48, 65, 65, 65 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( -11, 0 ), Vector2( -12, 0 ), Vector2( -9, -2 ), Vector2( -6, -7 ), Vector2( -6, -7 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 1, 7, 0, 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sword:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "AttackRight"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 16, 16, 64, 64, 64 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 2, 6, 3, 3 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( 12, 0 ), Vector2( 13, 0 ), Vector2( 10, -1 ), Vector2( 3, 6 ), Vector2( 3, 6 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sword:z_index")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -1, 0 ]
+}
+
+[sub_resource type="Animation" id=39]
+resource_name = "AttackUp"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 32, 66, 66, 66 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 5, 2, 2 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -1 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sword:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( -6, -4 ), Vector2( -6, -5 ), Vector2( 0, -8 ), Vector2( 3, -3 ), Vector2( 3, -3 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle_Down"
@@ -70,6 +339,33 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 32, 33, 34, 35, 32 ]
+}
+
+[sub_resource type="Animation" id=49]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sword:z_index")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 10 ),
+"update": 0,
+"values": [ Vector2( 6, 6 ) ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -138,40 +434,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 72, 73, 74, 75 ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "Sword_Swing_Down"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 0, 0 ]
-}
-
-[sub_resource type="Animation" id=18]
-resource_name = "Sword_Swing_Right"
-length = 0.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 28, 29, 30, 31 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -258,6 +520,42 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 4, 5, 6, 7 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( 6, -6 ), Vector2( 6, -7 ), Vector2( 6, -6 ), Vector2( 6, -5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Walk_Left"
@@ -274,6 +572,42 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 52, 53, 54, 55 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 1 ),
+"update": 0,
+"values": [ Vector2( -5, -6 ), Vector2( -4, -6 ), Vector2( -5, -6 ), Vector2( -3, -6 ), Vector2( -3, -6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -292,6 +626,42 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 20, 21, 22, 23 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( 5, -7 ), Vector2( 4, -7 ), Vector2( 5, -7 ), Vector2( 6, -7 ), Vector2( 6, -7 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -1, -1, -1, -1, -1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "Walk_Up"
@@ -309,6 +679,67 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 36, 37, 38, 39 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sword:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 10, 10, 10, 10, 10 ),
+"update": 0,
+"values": [ Vector2( -6, -7 ), Vector2( -6, -6 ), Vector2( -6, -6.33333 ), Vector2( -6, -6.66667 ), Vector2( -6, -6.66667 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sword:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.246908, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ -1, -1, -1, -1, -1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sword:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=45]
+animation = "AttackUp"
+
+[sub_resource type="AnimationNodeAnimation" id=46]
+animation = "AttackLeft"
+
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "AttackDown"
+
+[sub_resource type="AnimationNodeAnimation" id=48]
+animation = "AttackRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=42]
+blend_point_0/node = SubResource( 45 )
+blend_point_0/pos = Vector2( 0, -1.1 )
+blend_point_1/node = SubResource( 46 )
+blend_point_1/pos = Vector2( -1, 0 )
+blend_point_2/node = SubResource( 47 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 48 )
+blend_point_3/pos = Vector2( 1, 0 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=26]
 animation = "Idle_Left"
@@ -364,14 +795,20 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=37]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
 [sub_resource type="AnimationNodeStateMachine" id=24]
+states/Attack/node = SubResource( 42 )
+states/Attack/position = Vector2( 158, 105.528 )
 states/Idle/node = SubResource( 30 )
 states/Idle/position = Vector2( 158, -3.472 )
 states/Walk/node = SubResource( 35 )
 states/Walk/position = Vector2( 353, -3.472 )
-transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ) ]
+transitions = [ "Idle", "Walk", SubResource( 36 ), "Walk", "Idle", SubResource( 37 ), "Idle", "Attack", SubResource( 43 ), "Attack", "Idle", SubResource( 44 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -276, -134.472 )
+graph_offset = Vector2( -407, -95.472 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=25]
 
@@ -379,30 +816,41 @@ graph_offset = Vector2( -276, -134.472 )
 collision/safe_margin = 2.0
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Player" type="Sprite" parent="."]
 position = Vector2( 0, -3 )
 texture = ExtResource( 1 )
 hframes = 16
 vframes = 5
-frame = 49
+frame = 67
+
+[node name="Sword" type="Sprite" parent="Player"]
+position = Vector2( 6, 6 )
+z_index = -1
+texture = ExtResource( 3 )
+hframes = 8
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 0, -1 )
 rotation = -1.5708
 shape = SubResource( 19 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite")
+root_node = NodePath("../Player")
+anims/AttackDown = SubResource( 9 )
+anims/AttackLeft = SubResource( 38 )
+anims/AttackRight = SubResource( 50 )
+anims/AttackUp = SubResource( 39 )
 anims/Idle_Down = SubResource( 1 )
 anims/Idle_Left = SubResource( 6 )
 anims/Idle_Right = SubResource( 7 )
 anims/Idle_Up = SubResource( 8 )
+anims/RESET = SubResource( 49 )
 anims/Sword_Idle_Down = SubResource( 14 )
 anims/Sword_Idle_Left = SubResource( 15 )
 anims/Sword_Idle_Right = SubResource( 16 )
 anims/Sword_Idle_Up = SubResource( 17 )
-anims/Sword_Swing_Down = SubResource( 9 )
-anims/Sword_Swing_Right = SubResource( 18 )
 anims/Sword_Walk_Down = SubResource( 10 )
 anims/Sword_Walk_Left = SubResource( 11 )
 anims/Sword_Walk_Right = SubResource( 12 )
@@ -415,7 +863,7 @@ anims/Walk_Up = SubResource( 4 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 24 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 25 )
-parameters/Idle/blend_position = Vector2( -0.00835657, 0.000449419 )
-parameters/Walk/blend_position = Vector2( 0, 0 )
+parameters/Attack/blend_position = Vector2( -0.0445661, 0.180172 )
+parameters/Idle/blend_position = Vector2( -0.00390929, 1.07155 )
+parameters/Walk/blend_position = Vector2( -0.12588, 0.0663793 )
