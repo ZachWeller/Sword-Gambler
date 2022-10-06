@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://World/StoneBackground.png" type="Texture" id=1]
 [ext_resource path="res://Gorilla.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MainCharacter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Fire Hydrant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bush.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -2
 cell_size = Vector2( 32, 32 )
 format = 1
 
 [node name="Sprite" type="Sprite" parent="."]
+z_index = -2
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 208, 110 )
@@ -29,4 +32,21 @@ zoom = Vector2( 0.3, 0.3 )
 position = Vector2( -54, -11 )
 
 [node name="Gorilla" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 24, -37 )
+position = Vector2( 39, 6 )
+
+[node name="YSort" type="YSort" parent="YSort"]
+
+[node name="Bush" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( -94, -48 )
+
+[node name="Bush2" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( -12, -48 )
+
+[node name="Bush3" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( 15, -48 )
+
+[node name="Bush4" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( -40, -48 )
+
+[node name="Bush5" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( -67, -48 )
