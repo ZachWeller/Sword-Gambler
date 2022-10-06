@@ -1,28 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://World/StoneBackground.png" type="Texture" id=1]
+[ext_resource path="res://Gorilla.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MainCharacter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://World/Fire Hydrant.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+cell_size = Vector2( 32, 32 )
+format = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 208, 110 )
 
-[node name="TileMap" type="TileMap" parent="."]
-cell_size = Vector2( 32, 32 )
-format = 1
-
 [node name="YSort" type="YSort" parent="."]
 
-[node name="KinematicBody2D" parent="YSort" instance=ExtResource( 3 )]
+[node name="Player" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -12, 9 )
 
-[node name="Camera2D" type="Camera2D" parent="YSort/KinematicBody2D"]
+[node name="Camera2D" type="Camera2D" parent="YSort/Player"]
 current = true
 zoom = Vector2( 0.3, 0.3 )
 
 [node name="Fire Hydrant" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -54, -11 )
+
+[node name="Gorilla" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 24, -37 )

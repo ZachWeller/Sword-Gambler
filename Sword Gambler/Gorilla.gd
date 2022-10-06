@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 func _ready():
-	$AnimationPlayer.play("Gorilla Idle")
+	$AnimationPlayer.play("GorillaAnimation")
 	pass # Replace with function body.
 
 
