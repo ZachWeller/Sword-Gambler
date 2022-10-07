@@ -37,10 +37,7 @@ position = Vector2( 39, 6 )
 [node name="YSort" type="YSort" parent="YSort"]
 
 [node name="Bush" parent="YSort/YSort" instance=ExtResource( 6 )]
-position = Vector2( -94, -48 )
-
-[node name="Bush2" parent="YSort/YSort" instance=ExtResource( 6 )]
-position = Vector2( -12, -48 )
+position = Vector2( -95, -48 )
 
 [node name="Bush3" parent="YSort/YSort" instance=ExtResource( 6 )]
 position = Vector2( 15, -48 )
@@ -50,3 +47,9 @@ position = Vector2( -40, -48 )
 
 [node name="Bush5" parent="YSort/YSort" instance=ExtResource( 6 )]
 position = Vector2( -67, -48 )
+
+[node name="Bush6" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( 65, -43 )
+
+[node name="Bush2" parent="YSort/YSort" instance=ExtResource( 6 )]
+position = Vector2( -13, -48 )
